@@ -20,7 +20,7 @@ public class AppStack : Stack
 
     var apiGateway = new RestApi(this, "what-did-i-do-login", new RestApiProps
     {
-      RestApiName = "what-did-i-do",
+      RestApiName = "what-did-i-do-login",
       DefaultCorsPreflightOptions = new CorsOptions
       {
         AllowOrigins = new[]
