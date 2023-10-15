@@ -16,6 +16,10 @@
       Version="$(AmazonLambdaAspNetCoreServerVersion)" />
     <PackageReference Include="AspNetCore.Identity.AmazonDynamoDB"
       Version="$(AspNetCoreIdentityAmazonDynamoDBVersion)" />
+    <PackageReference Include="AWS.Lambda.Powertools.Logging"
+      Version="$(AWSLambdaPowertoolsLoggingVersion)" />
+    <PackageReference Include="AWS.Lambda.Powertools.Tracing"
+      Version="$(AWSLambdaPowertoolsTracingVersion)" />
     <PackageReference Include="AWSSDK.DynamoDBv2" Version="$(AWSSDKDynamoDBv2Version)" />
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup"
       Version="$(AWSSDKExtensionsNETCoreSetupVersion)" />
