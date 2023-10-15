@@ -24,8 +24,6 @@
       Version="$(CommunityOpenIddictAmazonDynamoDBVersion)" />
     <PackageReference Include="FluentValidation" Version="$(FluentValidationVersion)" />
     <PackageReference Include="MediatR" Version="$(MediatRVersion)" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection"
-      Version="$(MediatRExtensionsMicrosoftDependencyInjectionVersion)" />
     <PackageReference Include="OdeToCode.AddFeatureFolders"
       Version="$(OdeToCodeAddFeatureFoldersVersion)" />
     <PackageReference Include="OpenIddict.AspNetCore" Version="$(OpenIddictAspNetCoreVersion)" />

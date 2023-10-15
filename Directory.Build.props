@@ -17,15 +17,14 @@
     <CommunityOpenIddictAmazonDynamoDBVersion>1.0.2</CommunityOpenIddictAmazonDynamoDBVersion>
     <CoverletMsbuildVersion>6.0.0</CoverletMsbuildVersion>
     <FluentValidationVersion>11.7.1</FluentValidationVersion>
-    <MediatRVersion>11.1.0</MediatRVersion>
-    <MediatRExtensionsMicrosoftDependencyInjectionVersion>11.1.0</MediatRExtensionsMicrosoftDependencyInjectionVersion>
+    <MediatRVersion>12.1.1</MediatRVersion>
     <MicrosoftAspNetCoreTestHostVersion>6.0.23</MicrosoftAspNetCoreTestHostVersion>
     <MicrosoftExtensionsConfigurationBinderVersion>7.0.4</MicrosoftExtensionsConfigurationBinderVersion>
     <MicrosoftExtensionsConfigurationEnvironmentVariablesVersion>7.0.0</MicrosoftExtensionsConfigurationEnvironmentVariablesVersion>
     <MicrosoftExtensionsConfigurationFileExtensionsVersion>7.0.0</MicrosoftExtensionsConfigurationFileExtensionsVersion>
     <MicrosoftExtensionsConfigurationJsonVersion>7.0.0</MicrosoftExtensionsConfigurationJsonVersion>
     <MicrosoftExtensionsDependencyInjectionVersion>7.0.0</MicrosoftExtensionsDependencyInjectionVersion>
-    <MicrosoftNETTestSdkVersion>17.6.3</MicrosoftNETTestSdkVersion>
+    <MicrosoftNETTestSdkVersion>17.7.2</MicrosoftNETTestSdkVersion>
     <MoqVersion>4.18.4</MoqVersion>
     <OdeToCodeAddFeatureFoldersVersion>2.0.3</OdeToCodeAddFeatureFoldersVersion>
     <OpenIddictAspNetCoreVersion>4.9.0</OpenIddictAspNetCoreVersion>

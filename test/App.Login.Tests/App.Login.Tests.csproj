@@ -22,8 +22,6 @@
     </PackageReference>
     <PackageReference Include="FluentValidation" Version="$(FluentValidationVersion)" />
     <PackageReference Include="MediatR" Version="$(MediatRVersion)" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection"
-      Version="$(MediatRExtensionsMicrosoftDependencyInjectionVersion)" />
     <PackageReference Include="Microsoft.AspNetCore.TestHost"
       Version="$(MicrosoftAspNetCoreTestHostVersion)" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkVersion)" />

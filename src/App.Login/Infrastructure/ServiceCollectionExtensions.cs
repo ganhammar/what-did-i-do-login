@@ -114,7 +114,8 @@ public static class ServiceCollectionExtensions
   public static void AddMediatR(this IServiceCollection services)
   {
     services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationPipeline<,>));
-    services.AddMediatR(Assembly.GetAssembly(typeof(Startup))!);
+    services.AddMediatR(configuration => configuration
+      .RegisterServicesFromAssembly(Assembly.GetAssembly(typeof(Startup))!));
 
     services.Scan(x => x
       .FromAssemblyOf<IResponse>()

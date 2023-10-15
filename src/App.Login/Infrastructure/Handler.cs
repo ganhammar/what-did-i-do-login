@@ -52,10 +52,9 @@ public abstract class Handler<TRequest, TResponse> : IRequestHandler<TRequest, T
 public abstract class Handler<TRequest> : IRequestHandler<TRequest>
     where TRequest : IRequest
 {
-  async Task<Unit> IRequestHandler<TRequest, Unit>.Handle(TRequest request, CancellationToken cancellationToken)
+  async Task IRequestHandler<TRequest>.Handle(TRequest request, CancellationToken cancellationToken)
   {
     await Handle(request, cancellationToken).ConfigureAwait(false);
-    return Unit.Value;
   }
 
   protected abstract Task Handle(TRequest request, CancellationToken cancellationToken);
