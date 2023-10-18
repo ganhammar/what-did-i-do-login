@@ -2,6 +2,8 @@
 using Amazon.Lambda.AspNetCoreServer;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.Serialization.SystemTextJson;
+using Amazon.XRay.Recorder.Core;
+using Amazon.XRay.Recorder.Handlers.AwsSdk;
 using AWS.Lambda.Powertools.Logging;
 using AWS.Lambda.Powertools.Tracing;
 
@@ -33,6 +35,11 @@ public class LambdaEntryPoint : APIGatewayProxyFunction
   public override Task<APIGatewayProxyResponse> FunctionHandlerAsync(
     APIGatewayProxyRequest request, ILambdaContext lambdaContext)
   {
+    AWSSDKHandler.RegisterXRayForAllServices();
+#if DEBUG
+    AWSXRayRecorder.Instance.XRayOptions.IsXRayTracingDisabled = true;
+#endif
+
     if (!_defaultDimensions.ContainsKey("Version"))
       _defaultDimensions.Add("Version", lambdaContext.FunctionVersion ?? "Unknown");
 

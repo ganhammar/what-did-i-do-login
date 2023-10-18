@@ -24,6 +24,9 @@
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup"
       Version="$(AWSSDKExtensionsNETCoreSetupVersion)" />
     <PackageReference Include="AWSSDK.SimpleEmail" Version="$(AWSSDKSimpleEmailVersion)" />
+    <PackageReference Include="AWSXRayRecorder.Core" Version="$(AWSXRayRecorderCoreVersion)" />
+    <PackageReference Include="AWSXRayRecorder.Handlers.AwsSdk"
+      Version="$(AWSXRayRecorderHandlersAwsSdkVersion)" />
     <PackageReference Include="Community.OpenIddict.AmazonDynamoDB"
       Version="$(CommunityOpenIddictAmazonDynamoDBVersion)" />
     <PackageReference Include="FluentValidation" Version="$(FluentValidationVersion)" />
