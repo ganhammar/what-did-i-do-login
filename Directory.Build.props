@@ -15,8 +15,7 @@
     <AWSSDKDynamoDBv2Version>3.7.203.2</AWSSDKDynamoDBv2Version>
     <AWSSDKExtensionsNETCoreSetupVersion>3.7.7</AWSSDKExtensionsNETCoreSetupVersion>
     <AWSSDKSimpleEmailVersion>3.7.200.54</AWSSDKSimpleEmailVersion>
-    <AWSXRayRecorderCoreVersion>2.14.0</AWSXRayRecorderCoreVersion>
-    <AWSXRayRecorderHandlersAwsSdkVersion>2.12.0</AWSXRayRecorderHandlersAwsSdkVersion>
+    <AWSXRayRecorderHandlersAspNetCoreVersion>2.11.0</AWSXRayRecorderHandlersAspNetCoreVersion>
     <ConstructsVersion>10.3.0</ConstructsVersion>
     <CommunityOpenIddictAmazonDynamoDBVersion>1.0.2</CommunityOpenIddictAmazonDynamoDBVersion>
     <CoverletMsbuildVersion>6.0.0</CoverletMsbuildVersion>
