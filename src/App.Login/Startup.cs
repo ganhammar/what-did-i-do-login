@@ -108,6 +108,7 @@ public class Startup
       app.UseStatusCodePagesWithReExecute("/error");
     }
 
+    app.UseXRay("what-did-i-do-login");
     app.UseCors(AllowLocalhost);
     app.UseCookiePolicy();
     app.UseStaticFiles();
