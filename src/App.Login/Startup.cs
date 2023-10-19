@@ -1,4 +1,5 @@
 ﻿using Amazon.DynamoDBv2;
+using Amazon.XRay.Recorder.Handlers.AwsSdk;
 using App.Login.Features.Email;
 using App.Login.Infrastructure;
 using Microsoft.AspNetCore.CookiePolicy;
@@ -21,6 +22,8 @@ public class Startup
 
   public void ConfigureServices(IServiceCollection services)
   {
+    AWSSDKHandler.RegisterXRayForAllServices();
+
     var dynamoDbConfig = Configuration.GetSection("DynamoDB");
     var serviceUrl = dynamoDbConfig.GetValue<string>("ServiceUrl");
 
