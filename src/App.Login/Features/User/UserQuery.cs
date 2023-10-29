@@ -27,7 +27,7 @@ public class UserQuery
             return false;
           }
 
-          var user = await userManager.GetUserAsync(httpContextAccessor.HttpContext?.User);
+          var user = await userManager.GetUserAsync(httpContextAccessor.HttpContext!.User);
 
           return user != default;
         })
@@ -52,9 +52,9 @@ public class UserQuery
     public override async Task<IResponse<UserDto>> Handle(
       Query request, CancellationToken cancellationToken)
     {
-      var user = await _userManager.GetUserAsync(_httpContextAccessor.HttpContext?.User);
+      var user = await _userManager.GetUserAsync(_httpContextAccessor.HttpContext!.User);
 
-      return Response(UserMapper.ToDto(user));
+      return Response(UserMapper.ToDto(user!));
     }
   }
 }

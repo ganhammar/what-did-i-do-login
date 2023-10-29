@@ -43,7 +43,7 @@ public class SendCodeCommand
 
           var providers = await userManager.GetValidTwoFactorProvidersAsync(user);
 
-          return providers.Contains(provider);
+          return providers.Contains(provider!);
         })
         .WithErrorCode(nameof(ErrorCodes.TwoFactorProviderNotValid))
         .WithMessage(ErrorCodes.TwoFactorProviderNotValid);
@@ -70,14 +70,14 @@ public class SendCodeCommand
       Command request, CancellationToken cancellationToken)
     {
       var user = await _signInManager.GetTwoFactorAuthenticationUserAsync();
-      var code = await _userManager.GenerateTwoFactorTokenAsync(user, request.Provider);
+      var code = await _userManager.GenerateTwoFactorTokenAsync(user, request.Provider!);
 
       var message = $"Your security code is: {code}";
 
       switch (request.Provider)
       {
         case "Email":
-          await _emailSender.Send(await _userManager.GetEmailAsync(user), "Security Code - WDID", message);
+          await _emailSender.Send((await _userManager.GetEmailAsync(user))!, "Security Code - WDID", message);
           break;
       }
 

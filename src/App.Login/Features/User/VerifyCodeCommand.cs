@@ -45,7 +45,7 @@ public class VerifyCodeCommand
 
           var providers = await userManager.GetValidTwoFactorProvidersAsync(user);
 
-          return providers.Contains(provider);
+          return providers.Contains(provider!);
         })
         .WithErrorCode(nameof(ErrorCodes.TwoFactorProviderNotValid))
         .WithMessage(ErrorCodes.TwoFactorProviderNotValid);

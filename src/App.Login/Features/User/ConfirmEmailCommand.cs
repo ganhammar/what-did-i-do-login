@@ -28,7 +28,7 @@ public class ConfirmEmailCommand
         RuleFor(x => x.UserId)
           .MustAsync(async (userId, cancellationToken) =>
           {
-            var user = await userManager.FindByIdAsync(userId);
+            var user = await userManager.FindByIdAsync(userId!);
             return user != default;
           })
           .WithErrorCode("UserIdInvalid")
@@ -55,8 +55,8 @@ public class ConfirmEmailCommand
     public override async Task<IResponse> Handle(
       Command request, CancellationToken cancellationToken)
     {
-      var user = await _userManager.FindByIdAsync(request.UserId);
-      var result = await _userManager.ConfirmEmailAsync(user, request.Token);
+      var user = await _userManager.FindByIdAsync(request.UserId!);
+      var result = await _userManager.ConfirmEmailAsync(user!, request.Token!);
 
       if (!result.Succeeded)
       {

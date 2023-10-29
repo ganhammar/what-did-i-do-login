@@ -74,7 +74,7 @@ public class AuthorizeCommand
       }
 
       var user = await _userManager.GetUserAsync(httpContext.User);
-      var principal = await _signInManager.CreateUserPrincipalAsync(user);
+      var principal = await _signInManager.CreateUserPrincipalAsync(user!);
 
       var scopes = openIddictRequest!.GetScopes();
       principal.SetScopes(scopes);

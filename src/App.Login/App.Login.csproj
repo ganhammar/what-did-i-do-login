@@ -8,30 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Amazon.AspNetCore.DataProtection.SSM"
-      Version="$(AmazonAspNetCoreDataProtectionSSMVersion)" />
-    <PackageReference Include="Amazon.Extensions.Configuration.SystemsManager"
-      Version="$(AmazonExtensionsConfigurationSystemsManagerVersion)" />
-    <PackageReference Include="Amazon.Lambda.AspNetCoreServer"
-      Version="$(AmazonLambdaAspNetCoreServerVersion)" />
-    <PackageReference Include="AspNetCore.Identity.AmazonDynamoDB"
-      Version="$(AspNetCoreIdentityAmazonDynamoDBVersion)" />
-    <PackageReference Include="AWS.Lambda.Powertools.Logging"
-      Version="$(AWSLambdaPowertoolsLoggingVersion)" />
-    <PackageReference Include="AWS.Lambda.Powertools.Tracing"
-      Version="$(AWSLambdaPowertoolsTracingVersion)" />
-    <PackageReference Include="AWSSDK.DynamoDBv2" Version="$(AWSSDKDynamoDBv2Version)" />
-    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup"
-      Version="$(AWSSDKExtensionsNETCoreSetupVersion)" />
-    <PackageReference Include="AWSSDK.SimpleEmail" Version="$(AWSSDKSimpleEmailVersion)" />
-    <PackageReference Include="AWSXRayRecorder.Handlers.AspNetCore"
-      Version="$(AWSXRayRecorderHandlersAspNetCoreVersion)" />
-    <PackageReference Include="Community.OpenIddict.AmazonDynamoDB"
-      Version="$(CommunityOpenIddictAmazonDynamoDBVersion)" />
-    <PackageReference Include="FluentValidation" Version="$(FluentValidationVersion)" />
+    <PackageReference Include="Amazon.AspNetCore.DataProtection.SSM" Version="$(AmazonAspNetCoreDataProtectionSSMVersion)" />
+    <PackageReference Include="Amazon.Extensions.Configuration.SystemsManager" Version="$(AmazonExtensionsConfigurationSystemsManagerVersion)" />
+    <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="$(AmazonLambdaAspNetCoreServerVersion)" />
+    <PackageReference Include="AspNetCore.Identity.AmazonDynamoDB" Version="1.0.2" />
+    <PackageReference Include="AWS.Lambda.Powertools.Logging" Version="$(AWSLambdaPowertoolsLoggingVersion)" />
+    <PackageReference Include="AWS.Lambda.Powertools.Tracing" Version="$(AWSLambdaPowertoolsTracingVersion)" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.203.11" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="$(AWSSDKExtensionsNETCoreSetupVersion)" />
+    <PackageReference Include="AWSSDK.SimpleEmail" Version="3.7.200.63" />
+    <PackageReference Include="AWSXRayRecorder.Handlers.AspNetCore" Version="$(AWSXRayRecorderHandlersAspNetCoreVersion)" />
+    <PackageReference Include="Community.OpenIddict.AmazonDynamoDB" Version="2.0.0" />
+    <PackageReference Include="FluentValidation" Version="11.8.0" />
     <PackageReference Include="MediatR" Version="$(MediatRVersion)" />
-    <PackageReference Include="OdeToCode.AddFeatureFolders"
-      Version="$(OdeToCodeAddFeatureFoldersVersion)" />
+    <PackageReference Include="OdeToCode.AddFeatureFolders" Version="$(OdeToCodeAddFeatureFoldersVersion)" />
     <PackageReference Include="OpenIddict.AspNetCore" Version="$(OpenIddictAspNetCoreVersion)" />
     <PackageReference Include="Scrutor" Version="$(ScrutorVersion)" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="$(SwashbuckleAspNetCoreVersion)" />

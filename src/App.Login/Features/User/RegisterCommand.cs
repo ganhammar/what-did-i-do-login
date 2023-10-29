@@ -68,7 +68,7 @@ public class RegisterCommand
         PhoneNumberConfirmed = false,
       };
 
-      var result = await _userManager.CreateAsync(user, request.Password);
+      var result = await _userManager.CreateAsync(user, request.Password!);
 
       if (result.Succeeded)
       {
@@ -95,7 +95,7 @@ public class RegisterCommand
 
       var body = $"Follow the link below to confirm your WDID account:<br /><a href=\"{url}\">{url}</a>";
 
-      await _emailSender.Send(user.Email, "Confirm WDID Account", body);
+      await _emailSender.Send(user.Email!, "Confirm WDID Account", body);
     }
   }
 }

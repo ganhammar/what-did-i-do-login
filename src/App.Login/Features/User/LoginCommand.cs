@@ -46,7 +46,7 @@ public class LoginCommand
             {
               var user = await userManager.FindByEmailAsync(email);
 
-              return user.EmailConfirmed;
+              return user?.EmailConfirmed ?? false;
             })
             .WithErrorCode(nameof(ErrorCodes.EmailUnconfirmed))
             .WithMessage(ErrorCodes.EmailUnconfirmed);
@@ -101,7 +101,7 @@ public class LoginCommand
 
       if (request.Email != default)
       {
-        var user = await _userManager.FindByEmailAsync(request.Email);
+        var user = (await _userManager.FindByEmailAsync(request.Email))!;
         userName = user.UserName;
       }
 

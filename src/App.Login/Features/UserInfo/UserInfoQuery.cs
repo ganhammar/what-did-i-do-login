@@ -53,7 +53,7 @@ public class UserInfoQuery
       Query request, CancellationToken cancellationToken)
     {
       var principal = _httpContextAccessor.HttpContext!.User;
-      var user = await _userManager.GetUserAsync(principal);
+      var user = (await _userManager.GetUserAsync(principal))!;
 
       var claims = new Dictionary<string, object>(StringComparer.Ordinal)
       {
@@ -62,13 +62,13 @@ public class UserInfoQuery
 
       if (principal.HasScope(Scopes.Email))
       {
-        claims[Claims.Email] = await _userManager.GetEmailAsync(user);
+        claims[Claims.Email] = (await _userManager.GetEmailAsync(user)) ?? "";
         claims[Claims.EmailVerified] = await _userManager.IsEmailConfirmedAsync(user);
       }
 
       if (principal.HasScope(Scopes.Phone))
       {
-        claims[Claims.PhoneNumber] = await _userManager.GetPhoneNumberAsync(user);
+        claims[Claims.PhoneNumber] = (await _userManager.GetPhoneNumberAsync(user)) ?? "";
         claims[Claims.PhoneNumberVerified] = await _userManager.IsPhoneNumberConfirmedAsync(user);
       }
 

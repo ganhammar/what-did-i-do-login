@@ -27,7 +27,7 @@ public class LogoutCommand
             return false;
           }
 
-          var user = await userManager.GetUserAsync(httpContextAccessor.HttpContext?.User);
+          var user = await userManager.GetUserAsync(httpContextAccessor.HttpContext!.User);
 
           return user != default;
         })

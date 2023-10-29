@@ -48,7 +48,7 @@ public class ForgotPasswordCommand
     public override async Task<IResponse> Handle(
       Command request, CancellationToken cancellationToken)
     {
-      var user = await _userManager.FindByEmailAsync(request.Email);
+      var user = await _userManager.FindByEmailAsync(request.Email!);
 
       if (user != default)
       {
@@ -68,7 +68,7 @@ public class ForgotPasswordCommand
 
       var body = $"Follow the link below to reset your WDID account password:<br /><a href=\"{url}\">{url}</a>";
 
-      await _emailSender.Send(user.Email, "Reset Password", body);
+      await _emailSender.Send(user.Email!, "Reset Password", body);
     }
   }
 }
