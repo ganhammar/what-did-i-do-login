@@ -18,7 +18,7 @@
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="$(AWSSDKExtensionsNETCoreSetupVersion)" />
     <PackageReference Include="AWSSDK.SimpleEmail" Version="3.7.200.63" />
     <PackageReference Include="AWSXRayRecorder.Handlers.AspNetCore" Version="$(AWSXRayRecorderHandlersAspNetCoreVersion)" />
-    <PackageReference Include="Community.OpenIddict.AmazonDynamoDB" Version="2.0.0" />
+    <PackageReference Include="Community.OpenIddict.AmazonDynamoDB" Version="2.0.1" />
     <PackageReference Include="FluentValidation" Version="11.8.0" />
     <PackageReference Include="MediatR" Version="$(MediatRVersion)" />
     <PackageReference Include="OdeToCode.AddFeatureFolders" Version="$(OdeToCodeAddFeatureFoldersVersion)" />
