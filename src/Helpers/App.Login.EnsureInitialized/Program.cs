@@ -24,7 +24,7 @@ Console.WriteLine($"ServiceURL: {dynamoDbConfig.GetValue<string>("ServiceUrl")}"
 
 var services = new ServiceCollection();
 var client = new AmazonDynamoDBClient(
-  String.IsNullOrEmpty(serviceUrl) == false ? new AmazonDynamoDBConfig
+  string.IsNullOrEmpty(serviceUrl) == false ? new AmazonDynamoDBConfig
   {
     ServiceURL = serviceUrl,
   } : new());

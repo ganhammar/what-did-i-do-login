@@ -11,8 +11,8 @@
   <ItemGroup>
     <PackageReference Include="Amazon.Extensions.Configuration.SystemsManager" Version="$(AmazonExtensionsConfigurationSystemsManagerVersion)" />
     <PackageReference Include="AspNetCore.Identity.AmazonDynamoDB" Version="1.0.2" />
-    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.203.11" />
-    <PackageReference Include="Community.OpenIddict.AmazonDynamoDB" Version="2.0.1" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.300" />
+    <PackageReference Include="Community.OpenIddict.AmazonDynamoDB" Version="2.0.2" />
     <PackageReference Include="coverlet.msbuild" Version="$(CoverletMsbuildVersion)">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -20,10 +20,10 @@
     <PackageReference Include="FluentValidation" Version="11.8.0" />
     <PackageReference Include="MediatR" Version="$(MediatRVersion)" />
     <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.24" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkVersion)" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageReference Include="Moq" Version="4.20.69" />
     <PackageReference Include="OpenIddict.Core" Version="$(OpenIddictCoreVersion)" />
-    <PackageReference Include="xunit" Version="2.5.3" />
+    <PackageReference Include="xunit" Version="2.6.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="$(XunitRunnerVisualstudioVersion)">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
