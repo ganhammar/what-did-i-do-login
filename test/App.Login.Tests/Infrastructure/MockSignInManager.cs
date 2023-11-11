@@ -78,13 +78,13 @@ public class MockSignInManager : SignInManager<DynamoDbUser>
   {
     return new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
     {
-      new Claim(Claims.Email, user.Email ?? ""),
-      new Claim(Claims.Name, user.UserName ?? ""),
-      new Claim(Claims.PhoneNumber, user.PhoneNumber ?? ""),
-      new Claim(Claims.Subject, user.Id),
-      new Claim(Claims.Private.Scope, Scopes.Email),
-      new Claim(Claims.Private.Scope, Scopes.Phone),
-      new Claim(Claims.Private.Scope, Scopes.Roles),
+      new(Claims.Email, user.Email ?? ""),
+      new(Claims.Name, user.UserName ?? ""),
+      new(Claims.PhoneNumber, user.PhoneNumber ?? ""),
+      new(Claims.Subject, user.Id),
+      new(Claims.Private.Scope, Scopes.Email),
+      new(Claims.Private.Scope, Scopes.Phone),
+      new(Claims.Private.Scope, Scopes.Roles),
     }, "TestAuth"));
   }
 

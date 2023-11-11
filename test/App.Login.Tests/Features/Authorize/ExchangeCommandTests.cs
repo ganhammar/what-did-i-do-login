@@ -70,7 +70,7 @@ public class ExchangeCommandTests : TestBase
       authenticationService!.Setup(x => x.AuthenticateAsync(It.IsAny<HttpContext>(), It.IsAny<string>()))
         .Returns(Task.FromResult(AuthenticateResult.Success(new AuthenticationTicket(new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
         {
-          new Claim(Claims.Subject, user.Id),
+          new(Claims.Subject, user.Id),
         })), default, OpenIddictServerAspNetCoreDefaults.AuthenticationScheme))));
 
       var applicationManager = services.GetRequiredService<IOpenIddictApplicationManager>();
@@ -223,7 +223,7 @@ public class ExchangeCommandTests : TestBase
       authenticationService!.Setup(x => x.AuthenticateAsync(It.IsAny<HttpContext>(), It.IsAny<string>()))
         .Returns(Task.FromResult(AuthenticateResult.Success(new AuthenticationTicket(new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
         {
-          new Claim(Claims.Subject, user.Id),
+          new(Claims.Subject, user.Id),
         })), default, OpenIddictServerAspNetCoreDefaults.AuthenticationScheme))));
 
       var applicationManager = services.GetRequiredService<IOpenIddictApplicationManager>();
