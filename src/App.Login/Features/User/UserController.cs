@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using OpenIddict.Server.AspNetCore;
 
 namespace App.Login.Features.User;
 
@@ -82,5 +83,11 @@ public class UserController : ApiControllerBase
   [HttpPost]
   [AllowAnonymous]
   public async Task<IActionResult> VerifyCodeCommand([FromBody] VerifyCodeCommand.Command command)
+    => Respond(await _mediator.Send(command));
+
+  [HttpPost]
+  [AllowAnonymous]
+  [Authorize(AuthenticationSchemes = OpenIddictServerAspNetCoreDefaults.AuthenticationScheme)]
+  public async Task<IActionResult> Edit([FromBody] EditUserCommand.Command command)
     => Respond(await _mediator.Send(command));
 }

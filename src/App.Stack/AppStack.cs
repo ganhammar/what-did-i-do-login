@@ -31,13 +31,13 @@ public class AppStack : Stack
     });
 
     var loginConfiguration = _configuration.GetSection("Login");
-    new StringParameter(this, "LoginSigningCertificateParameter", new StringParameterProps
+    _ = new StringParameter(this, "LoginSigningCertificateParameter", new StringParameterProps
     {
       ParameterName = "/WDID/Login/SigningCertificate",
       StringValue = loginConfiguration.GetValue<string>("SigningCertificate")!,
       Tier = ParameterTier.STANDARD,
     });
-    new StringParameter(this, "LoginEncryptionCertificateParameter", new StringParameterProps
+    _ = new StringParameter(this, "LoginEncryptionCertificateParameter", new StringParameterProps
     {
       ParameterName = "/WDID/Login/EncryptionCertificate",
       StringValue = loginConfiguration.GetValue<string>("EncryptionCertificate")!,

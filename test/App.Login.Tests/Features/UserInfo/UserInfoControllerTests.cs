@@ -15,7 +15,7 @@ namespace App.Login.Tests.Features.UserInfo;
 [Cleanup]
 public class UserInfoControllerTests : TestBase
 {
-  private Func<IServiceProvider, object[]> ConfigureController = (services) =>
+  private readonly Func<IServiceProvider, object[]> ConfigureController = (services) =>
   {
     var mediator = services.GetRequiredService<IMediator>();
 
@@ -24,51 +24,51 @@ public class UserInfoControllerTests : TestBase
 
   [Fact]
   public async Task Should_ReturnOk_When_UserInfoQueryIsValid() => await ControllerTest<UserInfoController>(
+    // Arrange
+    ConfigureController,
+    // Act & Assert
+    async (controller, services) =>
+    {
       // Arrange
-      ConfigureController,
-      // Act & Assert
-      async (controller, services) =>
-      {
-        // Arrange
-        await CreateAndLoginValidUser(services);
+      await CreateAndLoginValidUser(services);
 
-        // Act
-        var result = await controller.UserInfo(new());
+      // Act
+      var result = await controller.UserInfo(new());
 
-        // Assert
-        Assert.NotNull(result);
+      // Assert
+      Assert.NotNull(result);
 
-        var okObjectResult = result as OkObjectResult;
-        Assert.NotNull(okObjectResult);
-      });
+      var okObjectResult = result as OkObjectResult;
+      Assert.NotNull(okObjectResult);
+    });
 
   [Fact]
   public async Task Should_ReturnChallenge_When_UserIsntAuthenticated() => await ControllerTest<UserInfoController>(
+    // Arrange
+    ConfigureController,
+    // Act & Assert
+    async (controller, services) =>
+    {
       // Arrange
-      ConfigureController,
-      // Act & Assert
-      async (controller, services) =>
+      var mediator = services.GetRequiredService<IMediator>();
+      var httpContext = GetMock<HttpContext>();
+      var featureCollection = new FeatureCollection();
+      featureCollection.Set(new OpenIddictServerAspNetCoreFeature
       {
-        // Arrange
-        var mediator = services.GetRequiredService<IMediator>();
-        var httpContext = GetMock<HttpContext>();
-        var featureCollection = new FeatureCollection();
-        featureCollection.Set(new OpenIddictServerAspNetCoreFeature
+        Transaction = new OpenIddictServerTransaction
         {
-          Transaction = new OpenIddictServerTransaction
-          {
-            Request = new OpenIddictRequest(),
-          },
-        });
-        httpContext!.Setup(x => x.Features).Returns(featureCollection);
-
-        // Act
-        var result = await controller.UserInfo(new());
-
-        // Assert
-        Assert.NotNull(result);
-
-        var challengeResult = result as ChallengeResult;
-        Assert.NotNull(challengeResult);
+          Request = new OpenIddictRequest(),
+        },
       });
+      httpContext!.Setup(x => x.Features).Returns(featureCollection);
+
+      // Act
+      var result = await controller.UserInfo(new());
+
+      // Assert
+      Assert.NotNull(result);
+
+      var challengeResult = result as ChallengeResult;
+      Assert.NotNull(challengeResult);
+    });
 }
