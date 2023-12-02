@@ -41,6 +41,8 @@ public class EditUserCommandTests : TestBase
       var command = new EditUserCommand.Command
       {
         Password = "itsaseasyas1234",
+        UserName = "valid",
+        Email = email,
       };
 
       // Act

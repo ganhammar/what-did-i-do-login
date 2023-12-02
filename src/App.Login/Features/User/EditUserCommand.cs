@@ -15,6 +15,7 @@ public class EditUserCommand
   {
     public string? Password { get; set; }
     public string? Email { get; set; }
+    public string? UserName { get; set; }
   }
 
   public class CommandValidator : AbstractValidator<Command>
@@ -43,8 +44,9 @@ public class EditUserCommand
           .EmailAddress()
           .MustAsync(async (email, cancellationToken) =>
           {
+            var currentUser = await userManager.GetUserAsync(httpContextAccessor.HttpContext!.User);
             var user = await userManager.FindByEmailAsync(email);
-            return user == default;
+            return email == currentUser?.Email || user == default;
           })
           .WithErrorCode(Errors.InvalidRequest)
           .WithMessage("The specified email address is already registered");
@@ -72,12 +74,18 @@ public class EditUserCommand
 
       if (request.Password != default)
       {
-        user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, request.Password!);
+        user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, request.Password);
       }
 
       if (request.Email != default)
       {
-        user.Email = request.Email!;
+        user.Email = request.Email;
+        user.UserName = request.Email;
+      }
+
+      if (request.UserName != default)
+      {
+        user.UserName = request.UserName;
       }
 
       var result = await _userManager.UpdateAsync(user);
