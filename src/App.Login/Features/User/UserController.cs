@@ -85,7 +85,6 @@ public class UserController : ApiControllerBase
     => Respond(await _mediator.Send(command));
 
   [HttpPost]
-  [AllowAnonymous]
   public async Task<IActionResult> Edit([FromBody] EditUserCommand.Command command)
     => Respond(await _mediator.Send(command));
 }
