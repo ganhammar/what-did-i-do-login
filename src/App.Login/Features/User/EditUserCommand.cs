@@ -72,18 +72,18 @@ public class EditUserCommand
     {
       var user = (await _userManager.GetUserAsync(_httpContextAccessor.HttpContext!.User))!;
 
-      if (request.Password != default)
+      if (string.IsNullOrEmpty(request.Password) == false)
       {
         user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, request.Password);
       }
 
-      if (request.Email != default)
+      if (string.IsNullOrEmpty(request.Email) == false)
       {
         user.Email = request.Email;
         user.UserName = request.Email;
       }
 
-      if (request.UserName != default)
+      if (string.IsNullOrEmpty(request.UserName) == false)
       {
         user.UserName = request.UserName;
       }
