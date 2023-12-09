@@ -35,7 +35,7 @@
     <ScrutorVersion>4.2.2</ScrutorVersion>
     <SwashbuckleAspNetCoreVersion>6.5.0</SwashbuckleAspNetCoreVersion>
     <XunitVersion>2.6.1</XunitVersion>
-    <XunitRunnerVisualstudioVersion>2.5.3</XunitRunnerVisualstudioVersion>
+    <XunitRunnerVisualstudioVersion>2.5.4</XunitRunnerVisualstudioVersion>
   </PropertyGroup>
 
 </Project>
