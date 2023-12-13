@@ -14,7 +14,7 @@
     <AWSLambdaPowertoolsTracingVersion>1.3.2</AWSLambdaPowertoolsTracingVersion>
     <AWSSDKDynamoDBv2Version>3.7.203.11</AWSSDKDynamoDBv2Version>
     <AWSSDKExtensionsNETCoreSetupVersion>3.7.7</AWSSDKExtensionsNETCoreSetupVersion>
-    <AWSSDKSimpleEmailVersion>3.7.300.13</AWSSDKSimpleEmailVersion>
+    <AWSSDKSimpleEmailVersion>3.7.300.16</AWSSDKSimpleEmailVersion>
     <AWSXRayRecorderHandlersAspNetCoreVersion>2.11.0</AWSXRayRecorderHandlersAspNetCoreVersion>
     <ConstructsVersion>10.3.0</ConstructsVersion>
     <CommunityOpenIddictAmazonDynamoDBVersion>2.0.2</CommunityOpenIddictAmazonDynamoDBVersion>
