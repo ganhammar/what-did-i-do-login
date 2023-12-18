@@ -34,7 +34,7 @@
     <OpenIddictCoreVersion>4.9.0</OpenIddictCoreVersion>
     <ScrutorVersion>4.2.2</ScrutorVersion>
     <SwashbuckleAspNetCoreVersion>6.5.0</SwashbuckleAspNetCoreVersion>
-    <XunitVersion>2.6.1</XunitVersion>
+    <XunitVersion>2.6.3</XunitVersion>
     <XunitRunnerVisualstudioVersion>2.5.5</XunitRunnerVisualstudioVersion>
   </PropertyGroup>
 
