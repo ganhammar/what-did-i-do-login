@@ -267,7 +267,7 @@ public class UserControllerTests : TestBase
     });
 
   [Fact]
-  public async Task Should_ReturnForbidden_When_ResetRequestIsInvalid() => await ControllerTest<UserController>(
+  public async Task Should_ReturnBadRequest_When_ResetRequestIsInvalid() => await ControllerTest<UserController>(
     // Arrange
     ConfigureController,
     // Act & Assert
@@ -278,10 +278,7 @@ public class UserControllerTests : TestBase
 
       // Assert
       Assert.NotNull(result);
-
-      var forbidResult = result as ForbidResult;
-
-      Assert.NotNull(forbidResult);
+      Assert.IsType<BadRequestObjectResult>(result);
     });
 
   [Fact]
