@@ -13,7 +13,6 @@ public class ResetPasswordCommand
   {
     public string? UserId { get; set; }
     public string? Token { get; set; }
-    public string? ReturnUrl { get; set; }
     public string? Password { get; set; }
   }
 
@@ -25,9 +24,6 @@ public class ResetPasswordCommand
         .NotEmpty();
 
       RuleFor(x => x.Token)
-        .NotEmpty();
-
-      RuleFor(x => x.ReturnUrl)
         .NotEmpty();
 
       RuleFor(x => x.Password)

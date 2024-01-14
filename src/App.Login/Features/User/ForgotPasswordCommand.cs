@@ -33,16 +33,13 @@ public class ForgotPasswordCommand
   {
     private readonly UserManager<DynamoDbUser> _userManager;
     private readonly IEmailSender _emailSender;
-    private readonly IHttpContextAccessor _httpContextAccessor;
 
     public CommandHandler(
       UserManager<DynamoDbUser> userManager,
-      IEmailSender emailSender,
-      IHttpContextAccessor httpContextAccessor)
+      IEmailSender emailSender)
     {
       _userManager = userManager;
       _emailSender = emailSender;
-      _httpContextAccessor = httpContextAccessor;
     }
 
     public override async Task<IResponse> Handle(
@@ -58,13 +55,10 @@ public class ForgotPasswordCommand
       return Response();
     }
 
-    private async Task SendResetEmail(DynamoDbUser user, string? returnUrl)
+    private async Task SendResetEmail(DynamoDbUser user, string? resetUrl)
     {
       var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-      var request = _httpContextAccessor.HttpContext!.Request;
-      var url = $"{request.Scheme}://{request.Host}/user/reset"
-        + $"?UserId={user.Id}&Token={HttpUtility.UrlEncode(token)}"
-        + $"&ReturnUrl={HttpUtility.UrlEncode(returnUrl)}";
+      var url = $"{resetUrl}?UserId={user.Id}&Token={HttpUtility.UrlEncode(token)}";
 
       var body = $"Follow the link below to reset your WDID account password:<br /><a href=\"{url}\">{url}</a>";
 

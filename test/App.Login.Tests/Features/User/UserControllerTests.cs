@@ -252,12 +252,10 @@ public class UserControllerTests : TestBase
       };
       await userManager.CreateAsync(user);
       var token = await userManager.GeneratePasswordResetTokenAsync(user);
-      var url = "https://wdid.fyi/my-client-app";
 
       // Act
       var result = await controller.Reset(new()
       {
-        ReturnUrl = url,
         Token = token,
         UserId = user.Id,
         Password = "itsaseasyas123",
@@ -265,11 +263,7 @@ public class UserControllerTests : TestBase
 
       // Assert
       Assert.NotNull(result);
-
-      var redirectResult = result as RedirectResult;
-
-      Assert.NotNull(redirectResult);
-      Assert.Equal(url, redirectResult!.Url);
+      Assert.IsType<NoContentResult>(result);
     });
 
   [Fact]

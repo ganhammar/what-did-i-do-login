@@ -40,19 +40,10 @@ public class UserController : ApiControllerBase
   public async Task<IActionResult> Forgot([FromBody] ForgotPasswordCommand.Command command)
     => Respond(await _mediator.Send(command));
 
-  [HttpGet]
+  [HttpPost]
   [AllowAnonymous]
-  public async Task<IActionResult> Reset([FromQuery] ResetPasswordCommand.Command command)
-  {
-    var result = await _mediator.Send(command);
-
-    if (result.IsValid)
-    {
-      return Redirect(command.ReturnUrl!);
-    }
-
-    return Forbid();
-  }
+  public async Task<IActionResult> Reset([FromBody] ResetPasswordCommand.Command command)
+    => Respond(await _mediator.Send(command));
 
   [HttpPost]
   [AllowAnonymous]
