@@ -28,7 +28,6 @@ public class ResetPasswordCommandTests : TestBase
         UserId = user.Id,
         Token = token,
         Password = "itsnotaseasyas123",
-        ReturnUrl = "https://wdid.fyi/login",
       };
 
       // Act
@@ -55,7 +54,6 @@ public class ResetPasswordCommandTests : TestBase
         UserId = user.Id,
         Token = "not-the-right-stuff",
         Password = "itsnotaseasyas123",
-        ReturnUrl = "https://wdid.fyi/login",
       };
 
       // Act
@@ -75,7 +73,6 @@ public class ResetPasswordCommandTests : TestBase
       {
         Token = "a-reset-token",
         Password = "itsnotaseasyas123",
-        ReturnUrl = "https://wdid.fyi/login",
       };
       var validator = new ResetPasswordCommand.CommandValidator();
 
@@ -97,7 +94,6 @@ public class ResetPasswordCommandTests : TestBase
       {
         UserId = "a-user-id",
         Password = "itsnotaseasyas123",
-        ReturnUrl = "https://wdid.fyi/login",
       };
       var validator = new ResetPasswordCommand.CommandValidator();
 
@@ -119,7 +115,6 @@ public class ResetPasswordCommandTests : TestBase
       {
         UserId = "a-user-id",
         Token = "a-reset-token",
-        ReturnUrl = "https://wdid.fyi/login",
       };
       var validator = new ResetPasswordCommand.CommandValidator();
 
@@ -130,27 +125,5 @@ public class ResetPasswordCommandTests : TestBase
       Assert.False(response.IsValid);
       Assert.Contains(response.Errors, error =>
         error.ErrorCode == "NotEmptyValidator" && error.PropertyName == "Password");
-    });
-
-  [Fact]
-  public async Task Should_NotBeValid_When_ReturnUrlIsNotSet() =>
-    await MediatorTest(async (mediator, services) =>
-    {
-      // Arrange
-      var command = new ResetPasswordCommand.Command
-      {
-        UserId = "a-user-id",
-        Token = "a-reset-token",
-        Password = "itsnotaseasyas123",
-      };
-      var validator = new ResetPasswordCommand.CommandValidator();
-
-      // Act
-      var response = await mediator.Send(command);
-
-      // Assert
-      Assert.False(response.IsValid);
-      Assert.Contains(response.Errors, error =>
-        error.ErrorCode == "NotEmptyValidator" && error.PropertyName == "ReturnUrl");
     });
 }
