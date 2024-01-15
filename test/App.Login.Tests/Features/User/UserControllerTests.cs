@@ -397,7 +397,7 @@ public class UserControllerTests : TestBase
       });
 
       // Act
-      var result = await controller.SendCodeCommand(new()
+      var result = await controller.SendCode(new()
       {
         Provider = "Email",
       });
@@ -417,7 +417,7 @@ public class UserControllerTests : TestBase
     async (controller, services) =>
     {
       // Act
-      var result = await controller.SendCodeCommand(new()
+      var result = await controller.SendCode(new()
       {
         Provider = "Email",
       });
@@ -456,7 +456,7 @@ public class UserControllerTests : TestBase
       var code = await userManager.GenerateTwoFactorTokenAsync(user, "Email");
 
       // Act
-      var result = await controller.VerifyCodeCommand(new()
+      var result = await controller.VerifyCode(new()
       {
         Provider = "Email",
         Code = code,

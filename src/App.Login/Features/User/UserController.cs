@@ -67,12 +67,12 @@ public class UserController : ApiControllerBase
 
   [HttpPost]
   [AllowAnonymous]
-  public async Task<IActionResult> SendCodeCommand([FromBody] SendCodeCommand.Command command)
+  public async Task<IActionResult> SendCode([FromBody] SendCodeCommand.Command command)
     => Respond(await _mediator.Send(command));
 
   [HttpPost]
   [AllowAnonymous]
-  public async Task<IActionResult> VerifyCodeCommand([FromBody] VerifyCodeCommand.Command command)
+  public async Task<IActionResult> VerifyCode([FromBody] VerifyCodeCommand.Command command)
     => Respond(await _mediator.Send(command));
 
   [HttpPost]

@@ -57,21 +57,17 @@ public class VerifyCodeCommand
 
   public class CommandHandler : Handler<Command, IResponse<SignInResult>>
   {
-    private readonly UserManager<DynamoDbUser> _userManager;
     private readonly SignInManager<DynamoDbUser> _signInManager;
 
     public CommandHandler(
-      UserManager<DynamoDbUser> userManager,
       SignInManager<DynamoDbUser> signInManager)
     {
-      _userManager = userManager;
       _signInManager = signInManager;
     }
 
     public override async Task<IResponse<SignInResult>> Handle(
       Command request, CancellationToken cancellationToken)
     {
-      var user = await _signInManager.GetTwoFactorAuthenticationUserAsync();
       var result = await _signInManager
         .TwoFactorSignInAsync(request.Provider, request.Code, request.RememberMe, request.RememberBrowser);
 
