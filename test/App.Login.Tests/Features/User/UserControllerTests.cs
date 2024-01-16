@@ -616,4 +616,28 @@ public class UserControllerTests : TestBase
       var badRequestObjectResult = result as BadRequestObjectResult;
       Assert.NotNull(badRequestObjectResult);
     });
+
+  [Fact]
+  public async Task Should_ReturnAuthenticatorKey_When_GeneratingAuthenticatorKeyCommandIsValid() => await ControllerTest<UserController>(
+    // Arrange
+    ConfigureController,
+    // Act & Assert
+    async (controller, services) =>
+    {
+      // Arrange
+      var user = await CreateAndLoginValidUser(services);
+
+      // Act
+      var result = await controller.AuthenticatorKey(new());
+
+      // Assert
+      Assert.NotNull(result);
+
+      var okObjectResult = result as OkObjectResult;
+      Assert.NotNull(okObjectResult);
+
+      var response = okObjectResult!.Value as GenerateAuthenticatorKeyCommand.Result;
+      Assert.NotNull(response);
+      Assert.NotNull(response.Key);
+    });
 }

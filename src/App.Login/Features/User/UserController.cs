@@ -78,4 +78,8 @@ public class UserController : ApiControllerBase
   [HttpPost]
   public async Task<IActionResult> Edit([FromBody] EditUserCommand.Command command)
     => Respond(await _mediator.Send(command));
+
+  [HttpGet]
+  public async Task<IActionResult> AuthenticatorKey(GenerateAuthenticatorKeyCommand.Command command)
+    => Respond(await _mediator.Send(command));
 }
