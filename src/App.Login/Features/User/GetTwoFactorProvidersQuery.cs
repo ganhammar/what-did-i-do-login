@@ -15,12 +15,23 @@ public class GetTwoFactorProvidersQuery
 
   public class QueryValidator : AbstractValidator<Query>
   {
-    public QueryValidator(SignInManager<DynamoDbUser> signInManager)
+    public QueryValidator(
+      SignInManager<DynamoDbUser> signInManager,
+      UserManager<DynamoDbUser> userManager,
+      IHttpContextAccessor httpContextAccessor)
     {
       RuleFor(x => x)
         .MustAsync(async (query, cancellationToken) =>
         {
-          var user = await signInManager.GetTwoFactorAuthenticationUserAsync();
+          DynamoDbUser? user;
+          if (httpContextAccessor.HttpContext?.User?.Identity?.IsAuthenticated != true)
+          {
+            user = await signInManager.GetTwoFactorAuthenticationUserAsync();
+          }
+          else
+          {
+            user = await userManager.GetUserAsync(httpContextAccessor.HttpContext!.User);
+          }
 
           return user != default;
         })
@@ -33,20 +44,32 @@ public class GetTwoFactorProvidersQuery
   {
     private readonly UserManager<DynamoDbUser> _userManager;
     private readonly SignInManager<DynamoDbUser> _signInManager;
+    private readonly IHttpContextAccessor _httpContextAccessor;
 
     public QueryHandler(
       UserManager<DynamoDbUser> userManager,
-      SignInManager<DynamoDbUser> signInManager)
+      SignInManager<DynamoDbUser> signInManager,
+      IHttpContextAccessor httpContextAccessor)
     {
       _userManager = userManager;
       _signInManager = signInManager;
+      _httpContextAccessor = httpContextAccessor;
     }
 
     public override async Task<IResponse<List<string>>> Handle(
       Query request, CancellationToken cancellationToken)
     {
-      var user = await _signInManager.GetTwoFactorAuthenticationUserAsync();
-      var providers = await _userManager.GetValidTwoFactorProvidersAsync(user);
+      DynamoDbUser? user;
+      if (_httpContextAccessor.HttpContext?.User?.Identity?.IsAuthenticated != true)
+      {
+        user = await _signInManager.GetTwoFactorAuthenticationUserAsync();
+      }
+      else
+      {
+        user = await _userManager.GetUserAsync(_httpContextAccessor.HttpContext!.User);
+      }
+
+      var providers = await _userManager.GetValidTwoFactorProvidersAsync(user!);
 
       return Response(providers.ToList());
     }
