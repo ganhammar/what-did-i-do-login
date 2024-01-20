@@ -9,7 +9,7 @@ namespace App.Login.Features.User;
 
 public class VerifyCodeCommand
 {
-  public class Command : IRequest<IResponse<SignInResult>>
+  public class Command : IRequest<IResponse<LoginResult>>
   {
     public string? Provider { get; set; }
     public string? Code { get; set; }
@@ -55,7 +55,7 @@ public class VerifyCodeCommand
     }
   }
 
-  public class CommandHandler : Handler<Command, IResponse<SignInResult>>
+  public class CommandHandler : Handler<Command, IResponse<LoginResult>>
   {
     private readonly SignInManager<DynamoDbUser> _signInManager;
 
@@ -65,13 +65,13 @@ public class VerifyCodeCommand
       _signInManager = signInManager;
     }
 
-    public override async Task<IResponse<SignInResult>> Handle(
+    public override async Task<IResponse<LoginResult>> Handle(
       Command request, CancellationToken cancellationToken)
     {
       var result = await _signInManager
         .TwoFactorSignInAsync(request.Provider, request.Code, request.RememberMe, request.RememberBrowser);
 
-      return Response(result);
+      return Response(new LoginResult(result));
     }
   }
 }

@@ -312,9 +312,9 @@ public class UserControllerTests : TestBase
       var okObjectResult = result as OkObjectResult;
       Assert.NotNull(okObjectResult);
 
-      var signInResult = okObjectResult!.Value as Microsoft.AspNetCore.Identity.SignInResult;
-      Assert.NotNull(signInResult);
-      Assert.True(signInResult!.Succeeded);
+      var loginResult = okObjectResult!.Value as LoginResult;
+      Assert.NotNull(loginResult);
+      Assert.True(loginResult!.Succeeded);
     });
 
   [Fact]
@@ -468,9 +468,9 @@ public class UserControllerTests : TestBase
       var okObjectResult = result as OkObjectResult;
       Assert.NotNull(okObjectResult);
 
-      var signInResult = okObjectResult!.Value as Microsoft.AspNetCore.Identity.SignInResult;
-      Assert.NotNull(signInResult);
-      Assert.True(signInResult!.Succeeded);
+      var loginResult = okObjectResult!.Value as LoginResult;
+      Assert.NotNull(loginResult);
+      Assert.True(loginResult!.Succeeded);
     });
 
   [Fact]

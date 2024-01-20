@@ -9,7 +9,7 @@ namespace App.Login.Features.User;
 
 public class LoginCommand
 {
-  public class Command : IRequest<IResponse<SignInResult>>
+  public class Command : IRequest<IResponse<LoginResult>>
   {
     public string? Email { get; set; }
     public string? UserName { get; set; }
@@ -81,7 +81,7 @@ public class LoginCommand
     }
   }
 
-  public class CommandHandler : Handler<Command, IResponse<SignInResult>>
+  public class CommandHandler : Handler<Command, IResponse<LoginResult>>
   {
     private readonly UserManager<DynamoDbUser> _userManager;
     private readonly SignInManager<DynamoDbUser> _signInManager;
@@ -94,7 +94,7 @@ public class LoginCommand
       _signInManager = signInManager;
     }
 
-    public override async Task<IResponse<SignInResult>> Handle(
+    public override async Task<IResponse<LoginResult>> Handle(
       Command request, CancellationToken cancellationToken)
     {
       var userName = request.UserName;
@@ -105,8 +105,8 @@ public class LoginCommand
         userName = user.UserName;
       }
 
-      return Response(await _signInManager
-        .PasswordSignInAsync(userName, request.Password, request.RememberMe, false));
+      return Response(new LoginResult(await _signInManager
+        .PasswordSignInAsync(userName, request.Password, request.RememberMe, false)));
     }
   }
 }
