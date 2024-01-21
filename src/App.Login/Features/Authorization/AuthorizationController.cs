@@ -37,7 +37,7 @@ public class AuthorizationController : ApiControllerBase
         OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
   }
 
-  [HttpGet($"~/{Constants.BasePath}/connect/LogoutCommand")]
+  [HttpGet($"~/{Constants.BasePath}/connect/logout")]
   public async Task<IActionResult> LogoutCommand(LogoutCommand.Command command)
   {
     await _mediator.Send(command);
