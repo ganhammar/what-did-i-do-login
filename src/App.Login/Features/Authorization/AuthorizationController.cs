@@ -38,16 +38,18 @@ public class AuthorizationController : ApiControllerBase
   }
 
   [HttpGet($"~/{Constants.BasePath}/connect/logout")]
-  public async Task<IActionResult> LogoutCommand(LogoutCommand.Command command)
+  public async Task<IActionResult> Logout(LogoutCommand.Command command)
   {
     await _mediator.Send(command);
 
-    return SignOut(OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
+    await HttpContext.SignOutAsync(OpenIddictServerAspNetCoreDefaults.AuthenticationScheme);
+
+    return NoContent();
   }
 
   [HttpPost($"~/{Constants.BasePath}/connect/token")]
   [Produces("application/json")]
-  public async Task<IActionResult> ExchangeCommand(ExchangeCommand.Command command)
+  public async Task<IActionResult> Exchange(ExchangeCommand.Command command)
   {
     var result = await _mediator.Send(command);
 
