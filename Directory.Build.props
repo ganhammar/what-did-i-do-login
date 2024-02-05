@@ -21,7 +21,7 @@
     <CoverletMsbuildVersion>6.0.0</CoverletMsbuildVersion>
     <FluentValidationVersion>11.8.0</FluentValidationVersion>
     <MediatRVersion>12.1.1</MediatRVersion>
-    <MicrosoftAspNetCoreTestHostVersion>6.0.24</MicrosoftAspNetCoreTestHostVersion>
+    <MicrosoftAspNetCoreTestHostVersion>6.0.26</MicrosoftAspNetCoreTestHostVersion>
     <MicrosoftExtensionsConfigurationBinderVersion>7.0.4</MicrosoftExtensionsConfigurationBinderVersion>
     <MicrosoftExtensionsConfigurationEnvironmentVariablesVersion>7.0.0</MicrosoftExtensionsConfigurationEnvironmentVariablesVersion>
     <MicrosoftExtensionsConfigurationFileExtensionsVersion>7.0.0</MicrosoftExtensionsConfigurationFileExtensionsVersion>
