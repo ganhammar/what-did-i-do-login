@@ -24,7 +24,7 @@
     <MicrosoftAspNetCoreTestHostVersion>6.0.24</MicrosoftAspNetCoreTestHostVersion>
     <MicrosoftExtensionsConfigurationBinderVersion>7.0.4</MicrosoftExtensionsConfigurationBinderVersion>
     <MicrosoftExtensionsConfigurationEnvironmentVariablesVersion>7.0.0</MicrosoftExtensionsConfigurationEnvironmentVariablesVersion>
-    <MicrosoftExtensionsConfigurationFileExtensionsVersion>7.0.0</MicrosoftExtensionsConfigurationFileExtensionsVersion>
+    <MicrosoftExtensionsConfigurationFileExtensionsVersion>8.0.0</MicrosoftExtensionsConfigurationFileExtensionsVersion>
     <MicrosoftExtensionsConfigurationJsonVersion>7.0.0</MicrosoftExtensionsConfigurationJsonVersion>
     <MicrosoftExtensionsDependencyInjectionVersion>7.0.0</MicrosoftExtensionsDependencyInjectionVersion>
     <MicrosoftNETTestSdkVersion>17.8.0</MicrosoftNETTestSdkVersion>
