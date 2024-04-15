@@ -30,7 +30,7 @@
     <MicrosoftNETTestSdkVersion>17.8.0</MicrosoftNETTestSdkVersion>
     <MoqVersion>4.20.70</MoqVersion>
     <OdeToCodeAddFeatureFoldersVersion>2.0.3</OdeToCodeAddFeatureFoldersVersion>
-    <OpenIddictAspNetCoreVersion>4.9.0</OpenIddictAspNetCoreVersion>
+    <OpenIddictAspNetCoreVersion>5.4.0</OpenIddictAspNetCoreVersion>
     <OpenIddictCoreVersion>4.9.0</OpenIddictCoreVersion>
     <ScrutorVersion>4.2.2</ScrutorVersion>
     <SwashbuckleAspNetCoreVersion>6.5.0</SwashbuckleAspNetCoreVersion>
