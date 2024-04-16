@@ -5,28 +5,28 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <AmazonAspNetCoreDataProtectionSSMVersion>3.1.1</AmazonAspNetCoreDataProtectionSSMVersion>
-    <AmazonExtensionsConfigurationSystemsManagerVersion>6.0.0</AmazonExtensionsConfigurationSystemsManagerVersion>
-    <AmazonCDKLibVersion>2.106.0</AmazonCDKLibVersion>
+    <AmazonAspNetCoreDataProtectionSSMVersion>3.2.0</AmazonAspNetCoreDataProtectionSSMVersion>
+    <AmazonExtensionsConfigurationSystemsManagerVersion>6.1.0</AmazonExtensionsConfigurationSystemsManagerVersion>
+    <AmazonCDKLibVersion>2.137.0</AmazonCDKLibVersion>
     <AmazonLambdaAspNetCoreServerVersion>8.1.0</AmazonLambdaAspNetCoreServerVersion>
-    <AspNetCoreIdentityAmazonDynamoDBVersion>1.0.2</AspNetCoreIdentityAmazonDynamoDBVersion>
-    <AWSLambdaPowertoolsLoggingVersion>1.3.3</AWSLambdaPowertoolsLoggingVersion>
-    <AWSLambdaPowertoolsTracingVersion>1.3.2</AWSLambdaPowertoolsTracingVersion>
-    <AWSSDKDynamoDBv2Version>3.7.203.11</AWSSDKDynamoDBv2Version>
-    <AWSSDKExtensionsNETCoreSetupVersion>3.7.7</AWSSDKExtensionsNETCoreSetupVersion>
+    <AspNetCoreIdentityAmazonDynamoDBVersion>1.1.3</AspNetCoreIdentityAmazonDynamoDBVersion>
+    <AWSLambdaPowertoolsLoggingVersion>1.5.1</AWSLambdaPowertoolsLoggingVersion>
+    <AWSLambdaPowertoolsTracingVersion>1.4.2</AWSLambdaPowertoolsTracingVersion>
+    <AWSSDKDynamoDBv2Version>3.7.302.1</AWSSDKDynamoDBv2Version>
+    <AWSSDKExtensionsNETCoreSetupVersion>3.7.300</AWSSDKExtensionsNETCoreSetupVersion>
     <AWSSDKSimpleEmailVersion>3.7.300.74</AWSSDKSimpleEmailVersion>
     <AWSXRayRecorderHandlersAspNetCoreVersion>2.11.0</AWSXRayRecorderHandlersAspNetCoreVersion>
     <ConstructsVersion>10.3.0</ConstructsVersion>
-    <CommunityOpenIddictAmazonDynamoDBVersion>2.0.2</CommunityOpenIddictAmazonDynamoDBVersion>
+    <CommunityOpenIddictAmazonDynamoDBVersion>2.2.0</CommunityOpenIddictAmazonDynamoDBVersion>
     <CoverletMsbuildVersion>6.0.0</CoverletMsbuildVersion>
-    <FluentValidationVersion>11.8.0</FluentValidationVersion>
-    <MediatRVersion>12.1.1</MediatRVersion>
+    <FluentValidationVersion>11.9.0</FluentValidationVersion>
+    <MediatRVersion>12.2.0</MediatRVersion>
     <MicrosoftAspNetCoreTestHostVersion>6.0.24</MicrosoftAspNetCoreTestHostVersion>
-    <MicrosoftExtensionsConfigurationBinderVersion>7.0.4</MicrosoftExtensionsConfigurationBinderVersion>
+    <MicrosoftExtensionsConfigurationBinderVersion>8.0.0</MicrosoftExtensionsConfigurationBinderVersion>
     <MicrosoftExtensionsConfigurationEnvironmentVariablesVersion>7.0.0</MicrosoftExtensionsConfigurationEnvironmentVariablesVersion>
     <MicrosoftExtensionsConfigurationFileExtensionsVersion>7.0.0</MicrosoftExtensionsConfigurationFileExtensionsVersion>
     <MicrosoftExtensionsConfigurationJsonVersion>7.0.0</MicrosoftExtensionsConfigurationJsonVersion>
-    <MicrosoftExtensionsDependencyInjectionVersion>7.0.0</MicrosoftExtensionsDependencyInjectionVersion>
+    <MicrosoftExtensionsDependencyInjectionVersion>8.0.0</MicrosoftExtensionsDependencyInjectionVersion>
     <MicrosoftNETTestSdkVersion>17.8.0</MicrosoftNETTestSdkVersion>
     <MoqVersion>4.20.70</MoqVersion>
     <OdeToCodeAddFeatureFoldersVersion>2.0.3</OdeToCodeAddFeatureFoldersVersion>
